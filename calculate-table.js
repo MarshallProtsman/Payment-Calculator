@@ -16,7 +16,7 @@ function calculateBalance() {
 		initialBalance = newBalance;
 
 		monthlyBalances[i] = {
-			date: `${i + 1}-2022`,
+			date: `${i + 5}-2022`,
 			paymentAmount: monthlyPayment,
 			monthlyBalance: newBalance,
 		};
