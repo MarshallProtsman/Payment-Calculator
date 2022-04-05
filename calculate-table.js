@@ -17,8 +17,8 @@ function calculateBalance() {
 
 		monthlyBalances[i] = {
 			date: `${i + 5}-2022`,
-			paymentAmount: monthlyPayment,
-			monthlyBalance: newBalance,
+			paymentAmount: `$${monthlyPayment}`,
+			monthlyBalance: `$${newBalance}`,
 		};
 		event.preventDefault();
 	}
