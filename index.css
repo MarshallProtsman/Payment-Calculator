@@ -16,6 +16,7 @@ body {
 
 	background: var(--almost-white);
 	font-family: "Inter", sans-serif;
+	max-width: 100vw
 }
 
 h1 {
@@ -41,6 +42,8 @@ ul {
 	background: var(--lighter-grey);
 	padding: 2rem;
 	margin: 10px;
+	position: fixed;
+	bottom: 0;
 }
 
 #payment-list li:nth-child(odd) {
