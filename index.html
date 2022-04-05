@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Payment Calculator</title>
+
+		<link rel="stylesheet" href="index.css" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="flex-column-wrapper">
+			<h1>Payment Calculator</h1>
+			<br />
+			<!-- <p>Months of Payment</p>
+		<input class="money-input" id="months-length" type="text" /> -->
+			<p>Initial Balance</p>
+			<input class="money-input" id="initial-balance" type="number" />
+			<p>Monthly Payment</p>
+			<input class="money-input" id="monthly-payment" type="number" />
+			<br />
+			<a id="submit" onclick="calculateBalance()" href="">Submit</a>
+			<br />
+			<div id="payment-list"></div>
+			<!-- <table id="payment-list">
+				<tr id="payment-list-header"></tr>
+			</table> -->
+			<calculate-table></calculate-table>
+			<div class="flex-row-wrapper"></div>
+		</div>
+		<!-- <script type='module' src="./balanceTable.js"></script> -->
+		<script src="calculate-table.js"></script>
+	</body>
+</html>
