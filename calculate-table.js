@@ -16,7 +16,7 @@ function calculateBalance() {
 		initialBalance = newBalance;
 
 		if (newBalance < 0) {
-			newBalance = "🎉 Debt Free"
+			newBalance = "Debt Free!"
 		}
 
 		monthlyBalances[i] = {
