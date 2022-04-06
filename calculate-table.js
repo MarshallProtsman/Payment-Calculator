@@ -15,10 +15,14 @@ function calculateBalance() {
 		newBalance = initialBalance - monthlyPayment;
 		initialBalance = newBalance;
 
+		if (newBalance < 0) {
+			newBalance = "🎉 Debt Free"
+		}
+
 		monthlyBalances[i] = {
 			date: `${i + 5}-2022`,
 			paymentAmount: `$${monthlyPayment}`,
-			monthlyBalance: `$${newBalance}`,
+			monthlyBalance: `${newBalance}`,
 		};
 		event.preventDefault();
 	}
