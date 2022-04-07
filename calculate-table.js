@@ -1,6 +1,6 @@
-let balanceAfter = document.getElementById("balance-after-payment");
-let submitButton = document.getElementById("submit");
-let paymentList = document.getElementById("payment-list");
+let balanceAfter = document.getElementById('balance-after-payment');
+let submitButton = document.getElementById('submit');
+let paymentList = document.getElementById('payment-list');
 
 let months = 6;
 let newBalance = 0;
@@ -8,21 +8,21 @@ let newBalance = 0;
 let monthlyBalances = {};
 
 function calculateBalance() {
-	let initialBalance = document.getElementById("initial-balance").value;
-	let monthlyPayment = document.getElementById("monthly-payment").value;
+	let initialBalance = document.getElementById('initial-balance').value;
+	let monthlyPayment = document.getElementById('monthly-payment').value;
 
 	for (let i = 0; i <= months - 1; i++) {
 		newBalance = initialBalance - monthlyPayment;
 		initialBalance = newBalance;
 
 		if (newBalance < 0) {
-			newBalance = "Debt Free!"
+			newBalance = 'Debt Free!'
 		}
 
 		monthlyBalances[i] = {
 			date: `${i + 5}-2022`,
 			paymentAmount: `$${monthlyPayment}`,
-			monthlyBalance: `${newBalance}`,
+			monthlyBalance: `$${newBalance}`,
 		};
 		event.preventDefault();
 	}
@@ -30,31 +30,22 @@ function calculateBalance() {
 	console.log(monthlyBalances);
 }
 
-let dateUl = document.createElement("ul");
-let amountUl = document.createElement("ul");
-let balanceUl = document.createElement("ul");
-
-dateUl.innerHTML = "<b>Payment Date:</b>";
-amountUl.innerHTML = "<b>Payment Amount:</b>";
-balanceUl.innerHTML = "<b>Remaining Balance:</b>";
-
-// ul.classList.add("result-list");
-document.getElementById("payment-list").appendChild(dateUl);
-document.getElementById("payment-list").appendChild(amountUl);
-document.getElementById("payment-list").appendChild(balanceUl);
-
 function displayPayments() {
 	Object.keys(monthlyBalances).forEach((key) => {
 		console.log(key);
-		let dateLi = document.createElement("li");
-		let amountLi = document.createElement("li");
-		let balanceLi = document.createElement("li");
-		dateUl.appendChild(dateLi);
-		amountUl.appendChild(amountLi);
-		balanceUl.appendChild(balanceLi);
+		let paymentRowContainer = document.createElement('div');
+		paymentList.appendChild(paymentRowContainer);
 
-		dateLi.innerHTML = monthlyBalances[key].date;
-		amountLi.innerHTML = monthlyBalances[key].paymentAmount;
-		balanceLi.innerHTML = monthlyBalances[key].monthlyBalance;
+		let dateRowItem = document.createElement('p');
+		let paymentRowItem = document.createElement('p');
+		let balanceRowItem = document.createElement('p');
+
+		paymentRowContainer.appendChild(dateRowItem);
+		paymentRowContainer.appendChild(paymentRowItem);
+		paymentRowContainer.appendChild(balanceRowItem);
+
+		dateRowItem.innerHTML = monthlyBalances[key].date;
+		paymentRowItem.innerHTML = monthlyBalances[key].paymentAmount;
+		balanceRowItem.innerHTML = monthlyBalances[key].monthlyBalance;
 	});
 }

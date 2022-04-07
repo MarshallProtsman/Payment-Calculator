@@ -25,13 +25,17 @@
 			<input class="money-input" id="monthly-payment" type="number" />
 			<br />
 			<a id="submit" onclick="calculateBalance()" href="">Submit</a>
-			<br />
-			<br />
-			<div id="payment-list"></div>
+			<br>
+			<div id="payment-list">
+				<div class="table-titles">
+					<h3>Date</h3>
+					<h3>Payment</h3>
+					<h3>Remaining</h3>
+				</div>
+			</div>
 			<calculate-table></calculate-table>
 			<div class="flex-row-wrapper"></div>
 		</div>
-
 	</body>
 	<script src="calculate-table.js"></script>
 </html>
